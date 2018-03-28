@@ -1,0 +1,32 @@
+db:
+  image: mongo
+  volumes:
+    - ./data/runtime/db:/data/db
+    - ./data/dump:/dump
+  command: mongod --smallfiles
+ 
+rocketchat:
+  image: rocketchat/rocket.chat:latest
+  environment:
+    - MONGO_URL=mongodb://db:27017/rocketchat
+    - ROOT_URL=http://chat.braybaut.com
+    - Accounts_UseDNSDomainCheck=True
+  links:
+    - db:db
+  ports:
+    - 3000:3000
+ 
+hubot:
+  image: rocketchat/hubot-rocketchat:v0.1.4
+  environment:
+    - ROCKETCHAT_URL=192.168.1.180:3000
+    - ROCKETCHAT_ROOM=ASIX
+    - ROCKETCHAT_USER=javi
+    - ROCKETCHAT_PASSWORD=12345678
+    - BOT_NAME=PROFE
+    - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-greetings
+  links:
+    - rocketchat:rocketchat
+#Esto se utiliza para exponer el puerto de hubot para las notificaciones del host en el puerto 3001 para hubot-jenkins-notifier
+  ports:
+    - 3001:8080
