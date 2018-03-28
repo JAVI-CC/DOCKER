@@ -1,0 +1,32 @@
+--><state xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="state-file.xsd">
+<components>
+        <product platform="windows linux solaris-sparc solaris-x86 macosx-ppc macosx-x86" status="to-be-installed" uid="nb-base" version="8.0.1.0.201408251540">
+            <properties>
+                <property name="installation.location.windows">$N{install}/NetBeans 8.0.1</property>
+                <property name="minimum.jdk.version">1.7.0</property>
+                <property name="jdk.location">/usr/lib/jvm/java-8-oracle</property>
+                <property name="installation.timestamp">1410350717067</property>
+                <property name="start.menu.shortcut.location">all.users</property>
+                <property name="installation.location.macosx">$N{install}/NetBeans/NetBeans/NetBeans 8.0.1.app</property>
+                <property name="installation.location">/usr/local/netbeans-8.0.1</property>
+                <property name="desktop.shortcut.location">all.users</property>
+                <property name="netbeans.summary.message.text">JUnit library successfully installed and all plugins are up to date.
+
+</property>
+            </properties>
+        </product>
+        <product platform="windows linux solaris-sparc solaris-x86 macosx-ppc macosx-x86" status="to-be-installed" uid="nb-extide" version="8.0.1.0.201408251540">
+            <properties>
+                <property name="show-in-wizard">false</property>
+                <property name="installation.location">/usr/local/netbeans-8.0.1</property>
+            </properties>
+        </product>
+        <product platform="windows linux solaris-sparc solaris-x86 macosx-ppc macosx-x86" status="to-be-installed" uid="nb-javase" version="8.0.1.0.201408251540">
+            <properties>
+                <property name="jre.allowed">false</property>
+                <property name="installation.location">/usr/local/netbeans-8.0.1</property>
+                <property name="junit.accepted">true</property>
+            </properties>
+        </product>
+    </components>
+</state>
